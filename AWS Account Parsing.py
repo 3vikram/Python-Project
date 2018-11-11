@@ -1,5 +1,6 @@
 import re
 from pprint import pprint
+import json
 
 class AwsAccountLeadData:
     def format_file(self, file_path):
@@ -46,14 +47,13 @@ class AwsAccountLeadData:
             elif self.counter == len(self.aws_account_number_line_number) - 1:
                 for j in range(self.aws_account_number_line_number[self.counter], self.total_line_count - 1):
                     #print(file_lines[j+1])
-                    self.result += self.file_lines[j + 1].strip()
+                    self.result += self.file_lines[j + 1].strip().strip('#')
                     self.final_result[self.aws_account_number[self.counter]]= self.result
                 break
 
 
         pretty_printed = pprint(self.final_result)
         print(pretty_printed)
-        print(len(self.aws_account_number))
 
 
 if __name__ == "__main__":
