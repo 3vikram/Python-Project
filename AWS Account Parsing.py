@@ -1,6 +1,5 @@
 import re
 from pprint import pprint
-import json
 
 class AwsAccountLeadData:
     def format_file(self, file_path):
@@ -24,7 +23,6 @@ class AwsAccountLeadData:
         for readfile in range(len(self.file_lines)):
             self.line = self.file_lines[readfile]
             if re.search('AWS_LEADS\[\d[0-9]+\]', self.line):
-                #print(line)
                 self.aws_account_number.append(self.line.strip().strip('AWS_LEADS[').strip(']'))
                 self.aws_account_number_line_number.append(readfile)
 
