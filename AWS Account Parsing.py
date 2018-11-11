@@ -28,25 +28,18 @@ class AwsAccountLeadData:
                 self.aws_account_number.append(self.line.strip().strip('AWS_LEADS[').strip(']'))
                 self.aws_account_number_line_number.append(readfile)
 
-
-        length_index = len(self.aws_account_number_line_number)
-        #print(aws_account_number_line_number)
-
         self.counter = 0
         self.result = ''
 
         while(True):
             if self.counter < len(self.aws_account_number_line_number) - 1:
                 for i in range(self.aws_account_number_line_number[self.counter], self.aws_account_number_line_number[self.counter + 1] - 5):
-                    #print(file_lines[i + 1])
                     self.result += self.file_lines[i + 1].strip()
-                #print('--------------------------------------------')
                 self.final_result[self.aws_account_number[self.counter]]= self.result
                 self.counter += 1
                 self.result = ''
             elif self.counter == len(self.aws_account_number_line_number) - 1:
                 for j in range(self.aws_account_number_line_number[self.counter], self.total_line_count - 1):
-                    #print(file_lines[j+1])
                     self.result += self.file_lines[j + 1].strip().strip('#')
                     self.final_result[self.aws_account_number[self.counter]]= self.result
                 break
@@ -54,7 +47,6 @@ class AwsAccountLeadData:
 
         pretty_printed = pprint(self.final_result)
         print(pretty_printed)
-
 
 if __name__ == "__main__":
     parse = AwsAccountLeadData()
