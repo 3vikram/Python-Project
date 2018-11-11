@@ -4,21 +4,28 @@ from pprint import pprint
 class AwsAccountLeadData:
     def format_file(self, file_path):
         self.file_path = file_path
-        with open(self.file_path, 'r+') as file_read:
-            with open('buffer.txt', 'w+') as file_write:
+        try:
+            with open(self.file_path, 'r+') as file_read:
+                with open('buffer.txt', 'w+') as file_write:
 
-                self.total_line_count = 0
-                for writeline in file_read.readlines():
-                    if not writeline.isspace():
-                        file_write.write(writeline)
-                        self.total_line_count += 1
+                    self.total_line_count = 0
+                    for writeline in file_read.readlines():
+                        if not writeline.isspace():
+                            file_write.write(writeline)
+                            self.total_line_count += 1
+        except FileNotFoundError:
+            print("File Not Found")
+
 
     def parse_aws_accountnumber(self):
-        with open('buffer.txt', 'r+') as file_write:
-            self.file_lines = file_write.readlines()
-            self.aws_account_number = []
-            self.aws_account_number_line_number = []
-            self.final_result = {}
+        try:
+            with open('buffer.txt', 'r+') as file_write:
+                self.file_lines = file_write.readlines()
+                self.aws_account_number = []
+                self.aws_account_number_line_number = []
+                self.final_result = {}
+        except FileNotFoundError:
+            print("File Not Found")
 
         for readfile in range(len(self.file_lines)):
             self.line = self.file_lines[readfile]
@@ -41,7 +48,6 @@ class AwsAccountLeadData:
                     self.result += self.file_lines[j + 1].strip().strip('#')
                     self.final_result[self.aws_account_number[self.counter]]= self.result
                 break
-
 
         pretty_printed = pprint(self.final_result)
         print(pretty_printed)
