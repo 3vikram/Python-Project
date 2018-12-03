@@ -13,4 +13,4 @@ for db in mycursor:
     print(db)'''
 
 mycursor = db_connection.cursor()
-mycursor.execute("CREATE TABLE Teachers (Name VARCHAR(255), Age TINYINT(255), Qualification VARCHAR(255), Experience TINYINT(255), Salary INT(255))")
+mycursor.execute("CREATE TABLE Teachers (Teacher_Name VARCHAR(255), Teacher_Age TINYINT(255), Teacher_Qualification VARCHAR(255), Teacher_Experience INT(255), Teacher_Salary VARCHAR(255))")
