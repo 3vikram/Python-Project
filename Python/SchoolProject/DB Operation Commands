@@ -1,0 +1,18 @@
+SQL Commands,
+
+  \sql  --> to connect and execute sql commands directly via mysql shell
+  \connect mysql root@localhost:3306  --> To connect to mysql server
+  SHOW DATABASES;  --> To list all db's in the server
+  USE <DB_Name>;  --> To switch and use the DATABASE
+  SHOW TABLES;  --> TO list all tables in the selected DATABASE
+  SELECT * FROM <TABLE_Name>; --> To list all rows from the selected table
+  SELECT * FROM <TABLE_Name> WHERE <Column_Name> = <Value>;  --> To get a specific row data from the selected table
+  SELECT <COLUMN_NAME> FROM <TABLE_NAME> WHERE <COLUMN_NAME> = <Value>;  --> To get a specific column data for a specific row from the selected table
+  create table record (id int(11) auto_increment primary key, record_name varchar(255), record_age tinyint(255), record_qual varchar(255), record_exp tinyint(255));  --> To create a table with columns
+  insert into record (record_name, record_age, record_qual, record_exp) values('test', 25, 'b.com', 5);  --> To insert data into the table
+  update <TABLE_NAME> SET <COLUMN_NAME> WHERE <COLUMN_NAME> = <Value>;  --> To update the existing column values or a specific row value in a specific column
+  drop table <TABLE_NAME>;  --> Deletes entire table content with the schema
+  delete from <TABLE_NAME> Where <COLUMN_NAME> = <Value>;  --> Deletes a column in the table
+
+
+
