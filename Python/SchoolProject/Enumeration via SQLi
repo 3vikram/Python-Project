@@ -26,3 +26,7 @@ select * from students where Student_ID = 1 UNION SELECT * FROM students; --> Wi
 
 SELECT name, description, price FROM products WHERE category=1 AND 1=2 UNION SELECT * FROM members  --> this will return first union statement as well as
                                                                                                         second statement records if and only if column numbers match
+
+Time Based SQL Injection,
+
+select * from students where Student_ID = 1 and SLEEP(50); --> This query will return the results after waiting for the specified time in secs in SLEEP() function
