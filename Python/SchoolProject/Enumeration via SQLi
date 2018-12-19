@@ -34,3 +34,5 @@ SELECT name, description, price FROM products WHERE category=1 AND 1=2 UNION SEL
 Time Based SQL Injection,
 
 select * from students where Student_ID = 1 and SLEEP(50); --> This query will return the results after waiting for the specified time in secs in SLEEP() function
+
+select * from students where Student_ID = 1-BENCHMARK(100, rand());  --> Will run the specified function 100 times and then give out the result
