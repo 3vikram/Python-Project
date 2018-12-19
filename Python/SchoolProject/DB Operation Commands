@@ -15,4 +15,5 @@ SQL Commands,
   delete from <TABLE_NAME> Where <COLUMN_NAME> = <Value>;  --> Deletes a column in the table
 
 Source: http://g2pc1.bu.edu/~qzpeng/manual/MySQL%20Commands.htm
+        http://www.securityidiots.com/Web-Pentest/SQL-Injection/Basic-Union-Based-SQL-Injection.html  (DB function calls)
 
