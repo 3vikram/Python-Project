@@ -16,4 +16,7 @@ SQL Commands,
 
 Source: http://g2pc1.bu.edu/~qzpeng/manual/MySQL%20Commands.htm
         http://www.securityidiots.com/Web-Pentest/SQL-Injection/Basic-Union-Based-SQL-Injection.html  (DB function calls)
+        
+>> pip install --upgrade pip
+>> pip install library_name        
 
